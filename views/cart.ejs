@@ -1,0 +1,36 @@
+<!-- the header section -->
+<%- include('includes/header.ejs') %>
+<!-- the header ends here -->
+<body>
+   <!-- the nav section -->
+   <%- include('includes/nav.ejs') %>
+   <!-- the nav ends here -->
+    <main>
+        <% if(items.length > 0) { %>
+            <% for(item of items) { %>
+        <div class="grid">
+            <h2 class="title"><%= item.itemId.title %></h2>
+            <h3 class="title">Quantity: <%= item.quantity %></h3>
+            <div class="img">
+                <img src="<%= item.itemId.imageLink %>" alt="<%= item.itemId.title %>">
+            </div>
+            <div class="operations">
+                <form action="/deleteItem" method="post">
+                    <input type="hidden" value="<%= item.itemId._id%>" name="cartId">
+                    <button type="submit" style="color:red;">Cancel</button>
+                </form>
+                <form action="/order" method="post">
+                    <input type="hidden" value="<%= item.itemId_id %>" name="itemId">
+                    <button type="submit" style="color:green;">Order</button>
+                </form>
+            </div>
+            
+        </div>
+        <% } %>
+        <% } else { %>
+            <h1>Cart is Empty!</h1>
+            <% } %>
+    </main>
+    <!-- the footer goes here -->
+    <%- include('includes/footer.ejs') %>
+    <!-- the footer ends here -->

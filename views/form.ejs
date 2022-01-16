@@ -1,0 +1,23 @@
+<!-- the header section -->
+<%- include('includes/header.ejs') %>
+<link rel="stylesheet" href="/css/form.css">
+<!-- the header ends here -->
+<body>
+   <!-- the nav section -->
+   <%- include('includes/nav.ejs') %>
+   <!-- the nav ends here -->
+    <main>
+        <form action=" <% if(ed) {%> /admin/edit-item <% } else { %> /admin/addItem <% } %>" method="post" class="form">
+            <input type="text" name="itemName" value="<% if(ed) {%> <%= item.title %> <% } %>" placeholder="Item name"><br>
+            <input type="number" name="itemPrice" value="<% if(ed) {%> <%=item.price %> <% } %>" placeholder="Item price" step="0.01"><br>
+            <input type="text" name="itemImage" value="<% if(ed) {%> <%= item.imageLink %> <% } %>" placeholder="Item Image link"><br>
+            <textarea name="itemDesc" id="" cols="30" rows="10" placeholder="Item description"><% if(ed) { %><%= item.description %> <% } %></textarea>
+            <% if(ed) { %>
+                <input type="hidden" value="<%= item._id %>" name="itemId">
+            <% } %>
+            <button><% if(ed) { %> Updata Product <% } else {%> Add Product <% } %></button>
+        </form>
+    </main>
+<!-- the footer goes here -->
+<%- include('includes/footer.ejs') %>
+<!-- the footer ends here -->

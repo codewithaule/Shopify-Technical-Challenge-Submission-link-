@@ -1,0 +1,44 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main{
+    color:white;
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+    width: 500px;
+    margin:auto;
+    text-align: center;
+    margin-top:20px;
+    box-shadow: 0px 3px 3px 3px rgb(198, 198, 224);
+}
+main .form{
+    padding:20px;
+}
+main .form input, textarea{
+    padding:20px;
+    margin-top:20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid  rgb(104, 6, 99);
+    width: 80%;
+}
+main .form input:focus{
+    border: 1px solid  rgb(104, 6, 99);
+}
+.form button{
+    padding: 20px;
+    background-color: white;
+    width: 80%;
+    margin-left:20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    color:rgb(102, 102, 192);
+    border:1px solid rgb(102, 102, 192);
+}
+.form button:hover{
+    background-color: rgb(102, 102, 192);
+    color: white;
+}

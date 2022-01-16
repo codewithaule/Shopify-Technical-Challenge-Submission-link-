@@ -1,0 +1,26 @@
+<!-- the header section -->
+<%- include('includes/header.ejs') %>
+<!-- the header ends here -->
+<body>
+   <!-- the nav section -->
+   <%- include('includes/nav.ejs') %>
+   <!-- the nav ends here -->
+    <main>
+        <div class="grid">
+            <h2 class="title"><%= item.title %></h2>
+            <h5><del>N</del><%= item.price %></h5>
+            <div class="img">
+                <img src="<%= item.imageLink %>" alt="<%= item.title %>">
+            </div>
+            <p><%= item.description %></p>
+            <div class="operations">
+                <form action="/admin/cart" method="post">
+                    <input type="hidden" value="<%= item._id %>" name="itemId">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- the footer goes here -->
+    <%- include('includes/footer.ejs') %>
+    <!-- the footer ends here -->
